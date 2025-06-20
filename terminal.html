@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Terminal</title>
+  <style>
+    body {
+      background: black;
+      color: green;
+      font-family: monospace;
+      padding: 1rem;
+    }
+    input {
+      background: black;
+      color: green;
+      border: none;
+      outline: none;
+      width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div id="output">Welcome to John's terminal. Type 'help'.</div>
+  <br><input id="cmd" autofocus />
+  <script>
+    const cmd = document.getElementById('cmd');
+    const output = document.getElementById('output');
+
+    cmd.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        const value = cmd.value.trim();
+        output.innerHTML += `\n> ${value}`;
+        if (value === 'help') {
+          output.innerHTML += '\nAvailable: whoami, projects, contact';
+        } else if (value === 'whoami') {
+          output.innerHTML += '\nI am John — Rust dev, builder, human.';
+        } else if (value === 'projects') {
+          output.innerHTML += '\n1. Diesel ORM App\n2. Rocket API\n3. Terminal Résumé';
+        } else if (value === 'contact') {
+          output.innerHTML += '\nEmail: you@example.com';
+        } else {
+          output.innerHTML += '\nCommand not recognized.';
+        }
+        cmd.value = '';
+      }
+    });
+  </script>
+</body>
+</html>

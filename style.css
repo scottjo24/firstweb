@@ -1,0 +1,18 @@
+body {
+  font-family: monospace;
+  background: #0f0f0f;
+  color: #f0f0f0;
+  padding: 2rem;
+}
+nav a {
+  color: cyan;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+input, textarea, button {
+  display: block;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
